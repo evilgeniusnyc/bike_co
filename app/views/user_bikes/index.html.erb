@@ -1,0 +1,12 @@
+<h1> Iron Boxer Bike Company <h1> 
+
+<br>
+<%@user_bikes.map do |user_bike_info|%> 
+    <%=user_bike_info.motto %></li>
+<br> 
+    <%=user_bike_info.street %><li>
+    <%=user_bike_info.city %><li>
+    <%=user_bike_info.phone %><li>
+
+    <p>© <%= Date.today.year %> Iron Boxer.</p>
+<%end %>

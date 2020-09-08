@@ -6,8 +6,7 @@ class CreateUserBikes < ActiveRecord::Migration[6.0]
       t.string :street
       t.string :city
       t.string :phone
-      t.integer :user_bike_id
-
+      
       t.timestamps
     end
   end

@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2020_09_07_001719) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
-    t.integer "department_id"
     t.integer "user_bike_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -25,7 +24,6 @@ ActiveRecord::Schema.define(version: 2020_09_07_001719) do
     t.string "name"
     t.string "phone"
     t.string "email"
-    t.string "programmer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,7 +33,6 @@ ActiveRecord::Schema.define(version: 2020_09_07_001719) do
     t.string "nick_name"
     t.string "dob"
     t.text "bio"
-    t.integer "project_manager_id"
     t.integer "department_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -55,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_09_07_001719) do
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "task_id"
     t.integer "project_id", null: false
     t.integer "programmer_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -70,7 +66,6 @@ ActiveRecord::Schema.define(version: 2020_09_07_001719) do
     t.string "street"
     t.string "city"
     t.string "phone"
-    t.integer "user_bike_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
