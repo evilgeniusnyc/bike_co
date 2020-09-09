@@ -1,16 +1,13 @@
-<h1>Welcome to the Project Manager Page</h1>
+<h1>Project Manager Page</h1>
+<hr> 
 
-<div class='content'>
-  <h1> List of current Project_managers</h1>
-    <% @project_manager.map do |project_manager_info| %>
-     <p>Project_manager Name: <strong><%=link_to project_manager_info.name,  project_manager_path(project_manager_info) %></strong>
-     - DOB: <strong><%=project_manager_info.dob %></strong> </p>
-     - Nickname: <strong><%=project_manager_info.nick_name %></strong> </p>
-    <% end %>
-  <br><br><br>
-  #continue 
-  <span class='button_to "Bio"'><%= link_to "project_manager_infor.bio, project_manager %></span>
-</div>
+<%@project_managers.map do |project_manager_info|%> 
 
+  <%=project_manager_info.name %><p>
+  <%=project_manager_info.nick_name %><p>
+  <%=project_manager_info.dob %><p>
+  
+  <%=project_manager_info.bio %><p>
 
+  <% end %> 
 

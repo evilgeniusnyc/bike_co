@@ -1,12 +1,14 @@
-<h1> Iron Boxer Bike Company <h1> 
-
-<br>
+<h1> Iron Boxer Bike Company, LLC <h1> 
+ <p><i> Building a Better Ride! <i> 
+<hr> 
+🚴
 <%@user_bikes.map do |user_bike_info|%> 
-    <%=user_bike_info.motto %></li>
-<br> 
-    <%=user_bike_info.street %><li>
-    <%=user_bike_info.city %><li>
-    <%=user_bike_info.phone %><li>
 
-    <p>© <%= Date.today.year %> Iron Boxer.</p>
+<%=user_bike_info.street %><p>
+<%=user_bike_info.city %><p>
+<%=user_bike_info.phone %><p>
+
+
+<font size = "3"><p>© <%= Date.today.year %> Iron Boxer Bike Company.</p>  <font size = "3">
 <%end %>
+

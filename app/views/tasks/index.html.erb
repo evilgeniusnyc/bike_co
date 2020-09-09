@@ -1,4 +1,10 @@
-<h1>Welcome to the Project Task Page</h1>
+<h1>Project Task Page</h1>
+
+ 
+<% @tasks.each do |task| %> 
+    <p><%= link_to task.name %><p>
+    
+    <%end%>
 
 <ul>
 
