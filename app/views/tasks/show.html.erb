@@ -1,0 +1,11 @@
+<h1> Task Show Page <h1>
+
+<h3>Task's Name: <%= @task.name %> <h3> 
+
+<h4> task's Programmers: <h4> 
+<br><%= @task.programmer.name %>
+<br> <%= @task.programmer.phone %>
+<br> <%= @task.programmer.email %>
+
+<br><br> 
+<%= link_to 'Back', tasks_path %> 

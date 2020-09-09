@@ -4,20 +4,12 @@ class UserBikesController < ApplicationController
     end
 
     def show
+        @user_bikes = UserBike(params[:id])
     end
+      
+    private
 
-    def new
+    def user_bike_params
+        params.require(:user_bike).permit(:name, :department_id)
     end
-
-    def create
-    end 
-
-    def edit 
-    end 
-
-    def update 
-    end 
-
-    def destroy
-    end 
 end

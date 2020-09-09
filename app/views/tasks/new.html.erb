@@ -1,18 +1,22 @@
-<h1> Create a New task<h1> 
+<h1> Create a New task:<h1> 
 
-<hr> 
+<% if flash[:errors] %>
+<ul>
 
-<%= form_for(@task) do |f| %>
-    <%= f.label :project
-    <%= f.collection_select :project_id, Project.all, :id, :name %> 
+<% flash[:errors].each do |message| %> 
+    <li>%= message %><li>
+    <% end%> 
+    <ul> 
+    <% end %> 
 
-    <%= form_for(@task) do |f| %>
-        <%= f.label :programmer
-        <%= f.collection_select :programmer_id, Programmer.all, :id, :name %>     
+<%= form_with model: @task do |f| %>
+    <%= f.label :name %> 
+    <%= f.text_field :name %> 
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <%= f.collection_select :project_id, Project.all, :id, :name %>
+    <%= f.collection_select :programmer_id, Programmer.all, :id, :name %>
+    <%= f.submit "Deploy More Labs!" %>
+    <% end%> 
 
-    <%= f.submit "Deploy More Labs" %>
-
-<% end %>
-
-
-# Foreign ids needed?
+    <br><br> 

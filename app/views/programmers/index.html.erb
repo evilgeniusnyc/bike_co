@@ -1,5 +1,9 @@
-<h1>Welcome to the Programmers Page</h1>
-
+<h1>Programmers Page</h1>
+ 
+<% @programmers.each do |programmer| %> 
+    <p><%= link_to programmer.name %><p>
+    
+    <%end%>
 <ul>
 
 
