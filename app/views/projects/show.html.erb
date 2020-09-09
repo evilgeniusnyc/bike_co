@@ -1,0 +1,20 @@
+<p> id="notice"><%= notice %><p>
+
+<p>
+
+<strong>Project</strong>
+</p>
+
+<% if @projet.tasks.any? %>
+<hr>
+<h2> Projects by <%=task.name %>:</h2>
+<%render @project.tasks %>
+<% end %> 
+
+<hr> 
+
+<h2>add a task<h2>
+<%render 'tasks/form', task: @project.task.build %>
+
+<%= link_to 'Edit', edit_project_path(@project) $> |
+<%= link_to 'Back', project_path %> 

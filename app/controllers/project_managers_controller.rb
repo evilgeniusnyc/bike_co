@@ -4,7 +4,7 @@ class ProjectManagersController < ApplicationController
     end
 
     def show
-        @project_manager = ProjectManager.find(params[:id])
+        @project_manager = ProjectManager.all
     end
 
     def new

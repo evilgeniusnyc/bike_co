@@ -35,4 +35,5 @@ class ProjectsController < ApplicationController
       params.require(:project).permit(:budget, :development_stage)
     end
   end
+end
 

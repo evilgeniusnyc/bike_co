@@ -17,7 +17,7 @@ class ProgrammersController < ApplicationController
     end 
 
     def edit 
-        @programmer = Programmer.find(params):id]
+     @programmer = Programmer.find(params)[:id]
     end 
 
     def update 

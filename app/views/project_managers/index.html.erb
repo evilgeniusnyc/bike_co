@@ -1,13 +1,10 @@
 <h1>Project Manager Page</h1>
 <hr> 
 
-<%@project_managers.map do |project_manager_info|%> 
+<% @project_managers.each do |project_manager| %> 
+  <h2><strong><%=project_manager.name %></strong></p> %><h2>
+  <li><%=project_manager.nick_name %><<li> 
+  <li><%=project_manager.dob %><li>
+  <li><%= link_to project_manager.bio, project_manager_path(project_manager) %><li>
 
-  <%=project_manager_info.name %><p>
-  <%=project_manager_info.nick_name %><p>
-  <%=project_manager_info.dob %><p>
-  
-  <%=project_manager_info.bio %><p>
-
-  <% end %> 
-
+<%end %> 

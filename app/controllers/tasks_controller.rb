@@ -12,9 +12,15 @@ class TasksController < ApplicationController
     end
 
     def create
-        @task = Task.create(@task_params)
-        redirect_to_task_path(@path)
-    end 
+        @task = Task.create(task_params)
+
+        if @task.valid?
+            redirect_to task_path(@task)
+        else 
+            flash[:errors] = @task.errors.full_messages
+           redirect_to new_path
+        end 
+    end
 
     def edit 
         @task = Task.find(params[:id])
@@ -26,8 +32,19 @@ class TasksController < ApplicationController
         redirect_to task_path(@task)
     end
 
+    def destroy 
+        @task = Task.find(params[:id])
+        task.destroy
+    
+    end
+
     private
-  def task_params
-    params.require(:task).permit(:name, :description)
-  end
+
+    def task_params
+        params.require(:task).permit(:name, :description, :programmer_id, :project_id)
+    end
 end
+
+
+
+## Can project_id be a strong param? 

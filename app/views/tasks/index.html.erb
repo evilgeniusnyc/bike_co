@@ -2,9 +2,11 @@
 
  
 <% @tasks.each do |task| %> 
-    <p><%= link_to task.name %><p>
-    
-    <%end%>
 
-<ul>
+<dd><%= link_to task.name, task_path(task) %><dd>
+<dt><%= task.description %><dt>
+
+<%end %>
+
+
 

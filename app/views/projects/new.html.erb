@@ -1,0 +1,19 @@
+<h1> Create a New Project:<h1> 
+
+<% if flash[:errors] %>
+<ul>
+
+<% flash[:errors].each do |message| %> 
+    <li>%= message %><li>
+    <% end%> 
+    <ul> 
+    <% end %> 
+
+<%= form_with model: @project do |f| %>
+    <%= f.label :project %> 
+    <%= f.text_field :project %> 
+    <%= f.submit "Deploy More Labs!" %>
+    <% end%> 
+
+    <br><br> 
+
